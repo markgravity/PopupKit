@@ -139,6 +139,8 @@ static const PopupViewLayout PopupViewLayoutCenter;
 // Block gets called after dismiss animation finishes. Be sure to use weak reference for popup within the block to avoid retain cycle.
 @property(nonatomic, copy) void (^didFinishDismissingCompletion)(void);
 
+@property(nonatomic, copy) void (^didTapOnBackground)(void);
+
 // Convenience method for creating popup with default values (mimics UIAlertView).
 + (instancetype)popupViewWithContentView:(UIView *)contentView;
 
