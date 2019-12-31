@@ -160,8 +160,10 @@ static const PopupViewLayout PopupViewLayoutCenter = {PopupViewHorizontalLayoutC
         // Try to dismiss if backgroundTouch flag set.
         if (_shouldDismissOnBackgroundTouch) {
             [self dismiss:YES];
-        } else {
-            [self onBackgroundTap];
+        }
+        
+        if (self.onBackgroundTap != NULL) {
+            self.onBackgroundTap();
         }
 
         // If no mask, then return nil so touch passes through to underlying views.
